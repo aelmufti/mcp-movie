@@ -17,8 +17,12 @@ def recommend_movie(prompt: str) -> str:
     system_prompt = """
 You are a movie recommendation expert.
 From the candidate movies, choose *one* best movie that matches the user's prompt.
-Answer format:
-Movie Title — short reason.
+Answer format (STRICT):
+Movie Title (Year) - Director Name
+
+Example: The Shawshank Redemption (1994) - Frank Darabont
+
+Only provide the movie title, year, and director name. Nothing else.
 """
 
     response = ollama.chat(
